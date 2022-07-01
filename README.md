@@ -35,7 +35,11 @@ Alistando Ambiente
 -----------------
 La implementación del sistema SDA-Vis se basó en [Flask](https://flask.palletsprojects.com/en/2.1.x/), con el back-end ejecutándose en Python y el front-end en JavaScript. Los datos fueron preprocesados ​​debido al costo computacional del cálculo contrafáctico. Para calcular los contrafactuales, usamos la técnica [DiCE](github.com/microsoft/DiCE). Para calcular la probabilidad de clasificación, utilizamos diferentes modelos de aprendizaje automático (bosque aleatorio, regresión logística y árbol de decisiones) de la biblioteca de Python scikit-learn. La limpieza y el filtrado de datos se realizaron utilizando las bibliotecas pandas y NumPy Python. Finalmente, todos los recursos de visualización se desarrollaron en base a la biblioteca de JavaScript [D3.js](d3js.org).
 
-SDA-vis funciona 
+Para instalar las dependencias manualmente:
+.. code:: bash
+
+    pip install -r requerimientos.txt
+
 SDA-vis requiere algunos paquetes:
 
 
