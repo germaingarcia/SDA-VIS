@@ -12,7 +12,9 @@ SDA-Vis: A Visualization System for Student Dropout Analysis Based on Counterfac
 [Paper ](https://www.mdpi.com/2076-3417/12/12/5785>) | [Documentación](https://github.com/germaingarcia/SDA-VIS>)|
 
 
-
+.. image:: https://github.com/germaingarcia/SDA-VIS/blob/22581be5b16a6005125fcf1f4265b19cdfbfe95f/figs/counterfactual.gif
+  :align: center
+  :alt: Visualizing a counterfactual explanation
 
 
 Citación
@@ -39,8 +41,5 @@ Bibtex::
 ## Agradecimientos
 Agradecemos por el soporte financiero al proyecto World Bank Concytec: ``Mejoramiento y Ampliación de Servicios del Sistema Nacional de Ciencia, Tecnología e Innovación Tecnológica'' (ProCiencia) por el proyecto 
 ``Ciencia de datos en educación: análisis de datos a gran escala utilizando métodos computacionales para detectar y prevenir problemas de violencia y deserción en entornos educativos'' (Grant 028-2019-FONDECYT-BM-INC.INV).
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
 
