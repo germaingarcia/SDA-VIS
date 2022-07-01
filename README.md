@@ -12,10 +12,21 @@ SDA-Vis: A Visualization System for Student Dropout Analysis Based on Counterfac
 [Paper ](https://www.mdpi.com/2076-3417/12/12/5785>) | [Documentación](https://github.com/germaingarcia/SDA-VIS>)|
 
 
-<img src="https://github.com/germaingarcia/SDA-VIS/blob/22581be5b16a6005125fcf1f4265b19cdfbfe95f/figs/counterfactual.gif" />
+![](https://github.com/germaingarcia/SDA-VIS/blob/22581be5b16a6005125fcf1f4265b19cdfbfe95f/figs/counterfactual.gif)
 
-  
 
+SDA-Vis es un plataforma  basado en contrafactuales para ayudar a los usuarios a analizar la deserción de los estudiantes en función a sus caracteristicas. Este sistema permite a los usuarios identificar las causas de la deserción y generar opciones sintéticas de no deserción que podrían ayudar a mitigar cualquier factor que pueda crear un riesgo de deserción en un estudiante.  
+
+## SDA-Vis: diseño visual y descripción general
+A continuación se muestra el sistema SDA-Vis y sus componentes. Los principales recursos son:
+* [A] histogramas para representar la distribución de las características de los estudiantes, 
+* [B] una proyección para representar las probabilidades de los estudiantes según el umbral del modelo, 
+* [C] una proyección para representar los contrafactuales y sus probabilidades, 
+* [D] exploración contrafactual para representar los valores sintéticos, 
+* [E] una tabla que muestra todos los valores reales de los estudiantes que desertaron, y 
+* [F] una visualización del impacto de algunos contrafactuales en un determinado grupo de estudiantes.
+
+![](https://github.com/germaingarcia/SDA-VIS/blob/22581be5b16a6005125fcf1f4265b19cdfbfe95f/figs/main.PNG)
 
 Citación
 -------
