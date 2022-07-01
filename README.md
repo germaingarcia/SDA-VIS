@@ -2,7 +2,7 @@ SDA-Vis: A Visualization System for Student Dropout Analysis Based on Counterfac
 ======================================================================
 * Sistema de visualización para el análisis de abandono de estudios basado en contrafactuales *
 
-`Garcia-Zanabria, G. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=34979/>`_, `Gutierrez-Pachas, D. A. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=16332/>`_, `Camara-Chavez, G. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=16064/>`_, `Poco, J. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=17033/>`_, `Gomez-Nieto, E. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=17384/>`_
+`Garcia-Zanabria, G. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=34979/>`_, `Gutierrez-Pachas, D. A. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=16332/>`_, `Camara-Chavez, G. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=16064/>`_, `Poco, J. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=17033/>`_, `Gomez-Nieto, E. <https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=17384/>`_  
 
 
 
