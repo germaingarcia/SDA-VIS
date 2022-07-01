@@ -1,6 +1,6 @@
 SDA-Vis: A Visualization System for Student Dropout Analysis Based on Counterfactual Exploration
 ======================================================================
-* Sistema de visualización para el análisis de abandono de estudios basado en contrafactuales *
+*Sistema de visualización para el análisis de abandono de estudios basado en contrafactuales*
 
 [Garcia-Zanabria, G.](https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=34979/),
 [Gutierrez-Pachas, D. A.](https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=16332/),
@@ -34,3 +34,13 @@ Bibtex::
 		  year={2022},
 		  publisher={MDPI}
 	}
+	
+
+## Agradecimientos
+Agradecemos por el soporte financiero al proyecto World Bank Concytec: ``Mejoramiento y Ampliación de Servicios del Sistema Nacional de Ciencia, Tecnología e Innovación Tecnológica'' (ProCiencia) por el proyecto 
+``Ciencia de datos en educación: análisis de datos a gran escala utilizando métodos computacionales para detectar y prevenir problemas de violencia y deserción en entornos educativos'' (Grant 028-2019-FONDECYT-BM-INC.INV).
+ - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
+ - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+
+
