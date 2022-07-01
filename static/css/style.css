@@ -1,0 +1,225 @@
+
+#intproContainer1{
+  border-radius: 4px;
+  height: calc(100% - 65px);
+}
+
+#intproContainer1{
+  border-radius: 4px;
+  height: calc(100% - 65px);
+}
+
+#GrafoContainer{
+  border-radius: 4px;
+  height: calc(100% - 65px);
+}
+
+#intproContainer2{
+  border-radius: 4px;
+  height: calc(100% - 65px);
+}
+   circle.Genabled {
+      cursor: pointer; 
+      stroke-width: 2;
+    }
+    circle.Gdisabled {
+      fill: transparent !important;
+    }
+  #control-panel {
+      font-family: Helvetica, Arial, sans-serif;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 2px;
+      padding: 5px;
+     z-index: 1;
+  }
+  .mapbutton{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    padding: 0px;
+    background-color:#1E1E1E;
+    border-style:none;
+    border-color: white;
+  }
+
+  #radius-panel {
+  font-family: Helvetica, Arial, sans-serif;
+  position: absolute;
+  background: #1E1E1E;
+  top: 0;
+  left: 2;
+  margin: 5px;
+  padding: 5px;
+  z-index: 1;
+  border-radius: 4px;
+  border-style:solid;
+  border-color:#d9d9d9;
+  border-width: 1px;
+  vertical-align: middle;
+  text-decoration-color:white;
+  opacity: 0.5;
+}
+
+#casedos{
+  font-family: Helvetica, Arial, sans-serif;
+  position: absolute;
+  background: #1E1E1E;
+  bottom: 0;
+  right: 0px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 1;
+  border-radius: 4px;
+  border-style:solid;
+  border-color:#d9d9d9;
+  border-width: 1px;
+  vertical-align: middle;
+  text-decoration-color:white;
+  opacity: 0.5;
+}
+
+#radius-panel2 {
+  font-family: Helvetica, Arial, sans-serif;
+  position: absolute;
+  background: #1E1E1E;
+  left: 2;
+  margin: 5px;
+  padding: 5px;
+  z-index: 1;
+  border-radius: 4px;
+  border-style:solid;
+  border-color:#d9d9d9;
+  border-width: 1px;
+  vertical-align: middle;
+  text-decoration-color:white;
+  opacity: 0.5;
+}
+
+hr.new1 {
+  border-top: 1px dashed gray;
+}
+
+/*LASSO*/
+.lasso path {
+            stroke: rgb(241, 126, 31);
+            stroke-width:2px;
+        }
+
+        .lasso .drawn {
+            fill-opacity:.05 ;
+        }
+
+        .lasso .loop_close {
+            fill:none;
+            stroke-dasharray: 4,4;
+        }
+
+        .lasso .origin {
+            fill:rgb(236, 36, 9);
+            fill-opacity:.5;
+        }
+
+        .not_possible {
+            fill: rgb(200,200,200);
+        }
+
+        .possible {
+            fill: #EC888C;
+        }
+        .selected {
+            opacity: 1;
+        }
+
+        img.center {
+  display: block;
+  margin: 0 auto;
+}
+
+
+#number-projects-nd {
+    font-size: 60px;
+}
+
+#total-donations-nd {
+    font-size: 60px;
+}
+
+.dc-chart g.row text {
+    fill: black;
+    font-size: 12px;
+}
+
+  .axisWhite line{
+      stroke: #03324c;
+    }
+
+    .axisWhite path{
+      stroke: rgb(248, 239, 239);
+    }
+    .axisWhite text{
+          fill: rgb(245, 239, 239);
+        }  
+
+        .areas {
+      fill: steelblue;
+      stroke: #03324c;
+    }
+    .areas:nth-child(odd){
+      fill: lightskyblue;
+    }
+
+    .line {
+      fill: #fff;
+    }
+    .baseline {
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .baseline:last-of-type {
+      display: none;
+    }
+    .line-label {
+      text-anchor: end;
+      font-size: .8em;
+      fill: rgb(243, 238, 238);
+    }
+    .line-label:nth-child(odd){
+      fill: #888;
+    }
+
+    #MainContenedor{ height: 100% }
+
+
+
+.xAxis path,
+      .xAxis line {
+        fill: none;
+        stroke: "#162e3e";
+        shape-rendering: crispEdges;
+      }
+      .xAxis text {
+        font-family: sans-serif;
+        font-size: 11px;
+        fill: "#80b1d3";
+      }
+
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis text{
+/*   stroke:tomato;
+  stroke-width : 1;   */
+}
+.axis path,
+.axis line {
+  fill: none;
+   stroke: "#162e3e";
+/*   stroke: tomato; */
+  shape-rendering: crispEdges;
+}
+

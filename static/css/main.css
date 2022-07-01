@@ -1,0 +1,190 @@
+body { 
+  margin: 0;
+ /* font-family: Arial, Helvetica, sans-serif;*/
+}
+
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+.header {
+  overflow: hidden;
+  background-color: #0c0c0c;
+  padding: 10px 30px;
+  height: 50px;
+
+}
+
+.header  a{
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px; 
+  line-height: 10px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: white;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+
+#plots{
+  position:absolute;
+  left:5px;
+  top: 60px;
+  width:140px;
+  border-radius: 4px;
+  height: calc(100% - 65px);
+  overflow: hidden;
+}
+
+
+.titleTemporalSerie{
+	font-size: 20px;
+    font-family: Impact;
+    text-align: center;
+}
+
+
+/*============================================================*/
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.NameTemporalPlot{
+  font-family:sans-serif; 
+  font-size: 12px; 
+  width: 2%; 
+  transform: rotate(-90deg);
+}
+
+.ImageTemporalPlot{
+  width: 95%;
+}
+
+/*/#######################################################################3 */
+
+
+.tooltip{
+  background:#b0c4de;
+  border: 0;
+  border-color: white;
+  border-radius: 8px;
+  font-family: 'Lobster';
+  font-size: 12px;
+  font-weight: bold;
+  height: 200px;
+  padding: 2px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  width: 800px;
+}
+
+.d3-tip {
+      line-height: 1;
+      padding: 6px;
+      background: rgba(194, 25, 25, 0.8);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 12px;
+       height: 150px;
+       width: 800px;
+    }
+ 
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 100%;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.8);
+      content: "\25BC";
+      position: absolute;
+      text-align: center;
+    }
+ 
+    /* Style northward tooltips specifically */
+    .d3-tip.n:after {
+      margin: -2px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
+
+    .textColumn {
+      font-family: 'Baumans', sans-serif;
+  }
+
+  svg {
+    font-family: 'Baumans', sans-serif;
+  }
+
+
+  .histogram {
+        margin-bottom: 0;
+        cursor: crosshair;
+        vertical-align: top;
+        opacity: 0.7;
+        fill: #aaa;      
+  }
+    .info {
+        line-height: 18px;
+        height: 18px;
+        font-size: 12px;
+        text-align: left;
+        margin-left: 6px;
+    }

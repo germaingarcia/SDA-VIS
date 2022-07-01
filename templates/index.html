@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SDA-VIS Counterfactual Visualization</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet'>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/styleNav.css">
+        <link rel="stylesheet" href="../static/css/main.css">
+        
+        <link href='https://spin.js.org/spin.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="../static/css/table.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.css" type="text/css" rel="stylesheet">
+        <!-- Tokenfield CSS -->
+        <link href="../static/chart/bootstrap-tokenfield.css" type="text/css" rel="stylesheet">
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+        <script type="text/javascript" src="../static/chart/lasso2.js"></script>
+        <script type="text/javascript" src="../static/chart/d3CheckBox.js"></script>
+        <script type="text/javascript" src="../static/chart/bootstrap-tokenfield.js"></script>
+        <script type="text/javascript" src="../static/chart/scrollspy.js"></script>
+        <!-- script src = "../static/chart/d3.v6.min.js"></script -->
+        <style>
+            body {
+            margin: 0px;
+            padding: 0px;
+            width:100%;
+       }
+   
+       html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif; font-size: 10px;}
+
+       #container {
+           width:100%;
+           text-align:center;
+           margin:0px;
+           margin:0px;
+       }
+       #container > div {
+           height:700px;
+           display: inline-block;
+           vertical-align: top;
+           border-radius: 2px;
+           text-align:center;
+           left:0px;
+           margin:0px;
+           padding-left:5px;
+           margin-top:5px;
+           background-color:white;
+           position: relative;
+           box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+       }
+
+       
+   
+       .CFR {
+           stroke: white;
+           fill: #3366cc;/*#dc3912*/
+           fill-opacity:0.5;
+           stroke-opacity:1;
+       }
+   
+       .Orig{
+           stroke: white;
+           fill: #dc3912;
+           fill-opacity:1;
+           stroke-opacity:1;
+       }
+       .Un1 {
+           stroke: white;
+           fill: #12dc77;
+           fill-opacity:1;
+           stroke-opacity:1;
+       }
+   
+       .Un0 {
+           stroke: white;
+           fill: #ff9900;
+           fill-opacity:1;
+           stroke-opacity:1;
+       }
+   
+   
+       .lasso path {
+         stroke: rgb(80,80,80);
+         stroke-width:2px;
+       }
+       
+       .lasso .drawn {
+         fill-opacity:.05 ;
+       }
+       
+       .lasso .loop_close {
+         fill:none;
+         stroke-dasharray: 4,4;
+       }
+       
+       .lasso .origin {
+         fill:#3399FF;
+         fill-opacity:.5;
+       }
+       
+       .not_possible {
+         fill:rgb(200,200,200);
+       }
+       
+       .possible {
+         fill:#EC888C;
+       }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .example::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .example {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        }
+        
+        .data {
+        position: fixed;
+      }
+       </style>
+    </head>
+    <body style="background-color: #d9d9d9 ; "> <!--  overflow-y: hidden; #EDF2F8  overflow-x: auto; overflow-y: auto;   #e1e1e1-->
+        
+        <div class="header w3-bar-block w3-hover-white w3-card" style="background-color:white; border-radius:4px; margin-top: 5px; margin-left: 5px; margin-right: 5px;"> 
+            <a  href="./" class="logo" style="color: #80b1d3;">SDA-Vis</a> <!-- - Crime Patterns Analysis and Visualization</a> -->
+        </div>
+        <div id="plots" class="w3-sidebar w3-bar-block w3-hover-white w3-card" > 
+            </br>
+            <p class="w3-large"><i class="fa fa-asterisk fa-fw " style="color: #fb8072;"></i><b style="color: #1c3b51;">Upload File:</b></p>
+            <div class="w3-small w3-margin-left">
+                <input type="file" id="file-selector" accept=".csv" onchange='openFile(event)'>
+            </div>
+
+            <br>
+            <p class="w3-large"><i class="fa fa-asterisk fa-fw " style="color: #fb8072;"></i><b style="color: #1c3b51;">Model</b></p>
+            <div class="w3-small w3-margin-left">
+                <select id="modelS" style="width: 90%;border-radius: 4px;">
+                    <option value="Neural_Network">Neural Network </option>
+                    <option value="Logistic_Regression">Logistic Regression</option>
+                    <option value="Random_Forest">Random Forest</option>
+                </select>
+            </div>
+
+            <br>
+            <div>
+                <label class="w3-small w3-margin-left"  style="display: inline-block;"><b># Contrafactuals :</b></label>
+                &nbsp;<b><input id="NContrafactuals" type="number" class="w3-input w3-margin-left w3-border w3-round w3-small " style="width: 60px;padding:1px 3px; display: inline-block;" placeholder="Alpha" value="5"> </b>
+            </div>
+
+            <br>
+
+                <div class="w3-container w3-center">
+                    <button class="w3-button w3-white w3-border w3-round-large" onclick="main()" style="color: #fb8072; background-color: red;" id="Run">Run</button>
+                </div>
+                <div id="spinner" style="width: 100%; position: relative; height: 80px; margin-top:20px; color: #fb8072;">
+                </div>
+        </div>
+    
+        <div class="w3-container" id="mainContainer" style="margin-left:140px;">  
+            <div class="w3-row" style="margin-left: -8px; margin-right: -10px; margin-top:5px;  ">
+
+                <div class="w3-white" id="intproContainer1" style=" position:absolute; padding: 0px; height:calc(100%-65px)">
+                    <div class="example" id="IntvsProb" style="width: 100%; height: 100%; overflow-y: scroll; "> 
+                    </div>
+                </div>
+                <div>
+                <div align = "left" class="w3-white" id="GrafoContainer" style="width: calc(100%/2.1); position:relative; height:calc(100%/2); padding-top:10px ;">              
+                    <div style="display: flex; font-size: 10px; background-color: #162e3e; border-radius: 4px;  margin-top: 0px; margin-left: 10px; margin-right: 10px; color:white;der-color:white; border-style: solid; border-width: 1px;">
+                        <div style="width: calc(100%); height: 25px; margin: auto;  ">
+                            <div class ="input-group" style="margin:auto;  position: relative; font-size: 10px;">
+                                
+                                <label for="X-axis">X-axis: <b> Probability </b></label>&nbsp; &nbsp;
+                                <label for="X-axis">Y-axis: </label>
+                                <select class="browser-default custom-select custom-select-sm" style=" color: #1c3b51; " id="yAxisCombo" onchange="handleClickLeftCombo(this)">
+                                    <option value="probability" selected="">Probability</option>
+                                    <option value="feasebility">Feasibility</option>
+                                    <option value="factibility">Factibility</option>
+                                </select>
+                            </div> 
+                        </div>
+                    </div>
+                    <div id="First_ScatterPlot" style="width: calc(100% ); height: calc(92%); margin-left: 10px; display: inline-block; padding: 0px; position: absolute;">
+                        
+                    </div>
+                    
+                </div>
+                <div class="w3-white" id="intproContainer2" style="font-size: 10px;  height: 200px; position: absolute; margin-top: 3px; padding-left: 10px; padding-right: 10px; overflow-y: scroll; scrollbar-width: none;">
+                        <div id="IntvsProb2" class="example" style="width: 100%; height: 100%; margin-left: 0px;  "> </div> 
+                </div>
+                </div>
+                <div class="w3-white" id="intproContainer3" style="position: absolute; margin-top: 0px;  padding-right: 10px; padding-left: 10px; padding-top: 10px; border-radius: 4px; height:calc(100%-65px)">
+
+                    <div class="row">
+                        <!-- Selección del lado izquierdo -->
+                        <div class="col-xs-12 col-md-12 col-sm-12"  >
+                            <div class="form-control" style="overflow-x: scroll; overflow-y: scroll; overflow-y: hidden; " id="tableDiv">
+                                <table id="example" class="display select compact mytable" cellspacing="0" >
+                                    <thead>
+                                       <tr>
+                                       <th><input name="select_all" value="1" type="checkbox"></th>
+                                       </tr>
+                                    </thead>
+                                    </table>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row" style="margin: 3px;">
+                        <div class="col-xs-10">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon">Filter Query</span>
+                                <input type="text" class="form-control" id="filter_id">
+                                <!-- <span class="input-group-addon">.00</span> -->
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-sm" style="padding: 1px;" onclick="AddGroups()"><span class="glyphicon glyphicon-plus-sign"></span>Add</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" id="tokenfield" value="" />
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin: 1px; margin-top: 3px;">
+                        <div id="divContainer" class="col-xs-12" style=" height: 350px; border-color: #162e3e; border-color: #162e3e; overflow-y: auto; scrollbar-width: none;">
+                            <div id="IntvsProb3" style=" height: 500px;  "></div>
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+               
+        </div>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+    <script src="../static/js/variables.js"></script>
+    <script src="../static/js/table.js"></script>
+    <script src="../static/js/impactView.js"></script>
+    <script src="../static/js/barcharts.js"></script>
+    <script src="../static/js/rowView.js"></script>
+    <script src="../static/js/projection.js"></script> 
+    <script src="../static/js/main.js"></script> 
+    </body>
+</html>

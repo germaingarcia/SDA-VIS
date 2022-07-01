@@ -1,0 +1,19 @@
+table.dataTable.select tbody tr,
+table.dataTable thead th:first-child {
+  cursor: pointer;
+  height: 5px;
+}
+
+
+.mytable{
+    font-size: 9pt; 
+        font-family: Arial;
+        border-collapse: collapse; 
+        border: 1px solid silver;
+        }
+
+        
+#example td, #example th {
+  padding: 3px; 
+}
+
