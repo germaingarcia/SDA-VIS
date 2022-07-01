@@ -1,6 +1,7 @@
 SDA-Vis: A Visualization System for Student Dropout Analysis Based on Counterfactual Exploration
 ======================================================================
-
+* Sistema de visualización para el análisis de abandono de estudios![image](https://user-images.githubusercontent.com/15927645/176942329-841c2ff3-086e-45f1-bfc3-46fb1a8220fe.png)
+ *
 
 
 
