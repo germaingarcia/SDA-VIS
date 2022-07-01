@@ -33,14 +33,36 @@ Sistema SDA-Vis: un conjunto de recursos visuales vinculados que permiten la exp
 
 Alistando Ambiente 
 -----------------
-La implementación del sistema SDA-Vis se basó en [Flask](https://flask.palletsprojects.com/en/2.1.x/), con el back-end ejecutándose en Python y el front-end en JavaScript. Los datos fueron preprocesados ​​debido al costo computacional del cálculo contrafáctico. Para calcular los contrafactuales, usamos la técnica [DiCE](github.com/microsoft/DiCE). Para calcular la probabilidad de clasificación, utilizamos diferentes modelos de aprendizaje automático (bosque aleatorio, regresión logística y árbol de decisiones) de la biblioteca de Python scikit-learn. La limpieza y el filtrado de datos se realizaron utilizando las bibliotecas pandas y NumPy Python. Finalmente, todos los recursos de visualización se desarrollaron en base a la biblioteca de JavaScript [D3.js](d3js.org).
+La implementación del sistema SDA-Vis se basó en [Flask](https://flask.palletsprojects.com/en/2.1.x/), con el back-end ejecutándose en Python y el front-end en JavaScript. Los datos fueron preprocesados debido al costo computacional del cálculo contrafáctico. Para calcular los contrafactuales, usamos la técnica [DiCE](github.com/microsoft/DiCE). Para calcular la probabilidad de clasificación, utilizamos diferentes modelos de aprendizaje automático (bosque aleatorio, regresión logística y árbol de decisiones) de la biblioteca de Python scikit-learn. La limpieza y el filtrado de datos se realizaron utilizando las bibliotecas pandas y NumPy Python. Finalmente, todos los recursos de visualización se desarrollaron en base a la biblioteca de JavaScript [D3.js](d3js.org).
 
 Para instalar las dependencias manualmente:
-.. code:: bash
-
+```bash
     pip install -r requerimientos.txt
+```
 
 SDA-vis requiere algunos paquetes:
+* flask
+* numpy
+* pandas
+* scikit-learn
+* dice_ml
+* joblib
+
+Empenzando con SDA-Vis
+-------------------------
+Con SDA-Vis, el análisis puede ser separado en tres pasos: Carga del conjunto de datos, Análisis basado en contrafactuales y Medir impacto de contrafactuales.
+
+El primer paso es levantar el servidor flask
+```bash
+    python main.py
+```
+en el archivo *main.py* se tiene que estar seguro de la ruta de los conjuntos de datos:
+```bash
+PATH = "DataPAth/"
+app = Flask(__name__,static_url_path='/static')
+```
+
+Un ejemplo del proceso de se puede encontrar en el [documento del link](https://github.com/germaingarcia/SDA-VIS/blob/b1d85f91db1849f738e645c7810a100dd4a581a7/Manual_SDA-Vis.docx.pdf)
 
 
 Flujo de trabajo de exploración visual
