@@ -12,9 +12,10 @@ SDA-Vis: A Visualization System for Student Dropout Analysis Based on Counterfac
 [Paper ](https://www.mdpi.com/2076-3417/12/12/5785>) | [Documentación](https://github.com/germaingarcia/SDA-VIS>)|
 
 
-.. image:: https://github.com/germaingarcia/SDA-VIS/blob/22581be5b16a6005125fcf1f4265b19cdfbfe95f/figs/counterfactual.gif
+.. image:: https://www.microsoft.com/en-us/research/uploads/prod/2020/01/MSR-Amit_1400x788-v3-1blog.gif
   :align: center
   :alt: Visualizing a counterfactual explanation
+  
 
 
 Citación
