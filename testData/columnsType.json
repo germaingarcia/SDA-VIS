@@ -1,0 +1,7 @@
+{
+   "Numericos": ["N_Cod_Student","Age","O_IDH","O_Poverty_Per","R_IDH","R_Poverty_Per","N_Reservation",  "Q_Courses_S","Q_A_Credits_S",  "Mandatory_GPA","Elective_GPA","GPA","N_Semesters","H_Ausent_S","Proportion_Credits"],   
+   "Categoricos": ["Gender","Marital_E","School_Type", "Scholarship"],
+   "Target": "Enrolled",
+   "Index": "ID" 
+}
+
