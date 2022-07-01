@@ -26,7 +26,28 @@ A continuación se muestra el sistema SDA-Vis y sus componentes. Los principales
 * [E] una tabla que muestra todos los valores reales de los estudiantes que desertaron, y 
 * [F] una visualización del impacto de algunos contrafactuales en un determinado grupo de estudiantes.
 
-![](https://github.com/germaingarcia/SDA-VIS/blob/22581be5b16a6005125fcf1f4265b19cdfbfe95f/figs/main.PNG)
+![](https://github.com/germaingarcia/SDA-VIS/blob/6f51f4582b2eefd742f7c722aecfba4e237fe9b4/figs/main.png)
+
+Sistema SDA-Vis: un conjunto de recursos visuales vinculados que permiten la exploración de la información de los estudiantes que abandonan la universidad y sus explicaciones contrafácticas. Los nombres de los recursos visuales son: **A** Feature Distribution Bars view, **B** Student Projection view, **C** Counterfactual Projection view, **D** Counterfactual Exploration view, **E** Table view, and **F** Impact view.
+
+
+Alistando Ambiente 
+-----------------
+La implementación del sistema SDA-Vis se basó en [Flask](https://flask.palletsprojects.com/en/2.1.x/), con el back-end ejecutándose en Python y el front-end en JavaScript. Los datos fueron preprocesados ​​debido al costo computacional del cálculo contrafáctico. Para calcular los contrafactuales, usamos la técnica [DiCE](github.com/microsoft/DiCE). Para calcular la probabilidad de clasificación, utilizamos diferentes modelos de aprendizaje automático (bosque aleatorio, regresión logística y árbol de decisiones) de la biblioteca de Python scikit-learn. La limpieza y el filtrado de datos se realizaron utilizando las bibliotecas pandas y NumPy Python. Finalmente, todos los recursos de visualización se desarrollaron en base a la biblioteca de JavaScript [D3.js](d3js.org).
+
+SDA-vis funciona 
+SDA-vis requiere algunos paquetes:
+
+
+Flujo de trabajo de exploración visual
+-----------------
+El usuario primero carga el conjunto de datos, luego las características y distribuciones de los estudiantes se calculan y utilizan para guiar el análisis. Para este propósito, los usuarios emplean Feature Distribution Bars View **(A)**. Una vez que el usuario está familiarizado con los atributos, es necesario que el análisis de los potenciales desertores sea mapeado en la vista **SP B** . El usuario puede seleccionar un conjunto diferente de estudiantes en función a los indicadores (por ejemplo, probabilidad, viabilidad y factibilidad). Una vez identificado un grupo de interés en la vista **SP**, nuestra vista **CP (C)** muestra todos los contrafactuales asociados con la anterior selección. El usuario puede elegir libremente un conjunto de contrafactuales para inspeccionar. Para dicha inspección, el siguiente paso es utilizar Counterfactual Exploration view **(D)**, que muestra los valores originales para cada atributo. Al mismo tiempo, los contrafactuales calculados muestran sólo los valores que necesitan ser modificados. Los estudiantes y sus contrafactuales podrían ser
+reordenados en función de la viabilidad y factibilidad, para ayudar a los usuarios a seleccionar contrafactuales específicos para un mayor análisis e investigación. Finalmente, el usuario podría medir cómo los cambios sugeridos por un contrafactual seleccionado puede influir en algunos estudiantes que usan el Impacto (Impact view **(F)**). Esta visualización muestra hasta qué punto sería posible reducir el número de abandonos. Para ello, es necesario seleccionar subconjuntos de alumnos para los que el usuario quiera medir el impacto. Para elegir los subconjuntos, el usuario  puede utilizar el Table View **E**, aplicando
+algunos filtros.
+
+Si el análisis resultante no satisface las necesidades de los usuarios, los usuarios pueden seleccionar otros
+contrafactuales desde Counterfactual Exploration view o comenzar de nuevo desde Dropout Analysis dual view **(B y C)** para considerar un nuevo grupo de estudiantes/contrafactuales y obtener un análisis más detallado
+
 
 Citación
 -------
